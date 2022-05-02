@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <img src="images/logo.svg" alt="Logo" />
+    </header>
+
+    <main>
+      <div class="calculadora">
+        <form action="">
+          <div class="valor_conta">
+            <label for="bill">Bill</label>
+            <input type="number" id="bill" />
+          </div>
+
+          <div class="quantidade_gorjeta">
+            <p>Select Tip %</p>
+
+            <input type="radio" id="5%" name="tip_amount" value="5%" />
+            <label for="5%">5%</label>
+
+            <input type="radio" id="10%" name="tip_amount" value="10%" />
+            <label for="10%">10%</label>
+
+            <input type="radio" id="15%" name="tip_amount" value="15%" />
+            <label for="15%">15%</label>
+
+            <input type="radio" id="25%" name="tip_amount" value="25%" />
+            <label for="25%">25%</label>
+
+            <input type="radio" id="50%" name="tip_amount" value="50%" />
+            <label for="50%">50%</label>
+
+            <input type="number" placeholder="Custom" />
+          </div>
+
+          <div class="quantidade_pessoas">
+            <label for="number_people">Number of People</label>
+            <input type="number" id="number_people" />
+          </div>
+
+          <div class="resultados">
+            <label>Tip Amount</label>
+            <label class="p_person">/ person</label>
+            <span>$</span>
+
+            <label>Total</label>
+            <label class="p_person">/ person</label>
+            <span>$</span>
+          </div>
+
+          <input type="reset" value="RESET" class="reset" />
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
