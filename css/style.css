@@ -26,9 +26,112 @@ header img {
   border-top-right-radius: 20px;
 }
 
+.calculadora label {
+  display: block;
+  margin-bottom: 2%;
+  color: var(--dark-grayish-cyan);
+}
+
 form {
   display: flex;
   flex-direction: column;
   gap: 25px;
   padding: 1.5rem;
+}
+
+input[type="number"] {
+  border: none;
+  background-color: var(--very-light-grayish-cyan);
+  width: 100%;
+  height: 1.7rem;
+  font-family: inherit;
+  color: hsl(183, 100%, 15%);
+  text-align: end;
+  font-size: 22px;
+  padding: 5px;
+}
+
+input[type="number"]:focus {
+  border: 1px solid hsl(183, 100%, 15%);
+}
+
+#bill {
+  background-image: url(../images/icon-dollar.svg);
+  background-repeat: no-repeat;
+  background-position: 4%;
+}
+
+.quantidade_gorjeta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quantidade_gorjeta input:not(:last-child) {
+  display: none;
+}
+
+.quantidade_gorjeta input:last-child {
+  width: 40%;
+}
+
+.quantidade_gorjeta label {
+  color: var(--very-light-grayish-cyan);
+  text-align: center;
+  vertical-align: middle;
+  width: 45%;
+  height: 2rem;
+  margin: 10px 6px;
+  background-color: var(--very-dark-cyan);
+  font-size: 22px;
+  border: 2px solid var(--very-dark-cyan);
+  border-radius: 4px;
+}
+
+.quantidade_gorjeta input[type="number"]::placeholder {
+  color: var(--very-dark-cyan);
+  text-align: center;
+}
+
+#number_people {
+  background-image: url(../images/icon-person.svg);
+  background-repeat: no-repeat;
+  background-position: 4%;
+}
+
+.resultados {
+  background-color: var(--very-dark-cyan);
+  height: max-content;
+  padding: 1.4rem;
+  padding-top: 2rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.resultados label {
+  color: var(--very-light-grayish-cyan);
+  font-size: 14px;
+}
+
+#p_person {
+  color: var(--grayish-cyan);
+  display: inline-block;
+}
+
+.resultados span {
+  align-self: flex-end;
+}
+
+.reset {
+  border: none;
+  height: 2rem;
+  margin-top: 15px;
+  border-radius: 4px;
+  font-family: inherit;
+  padding: 2px;
+  color: var(--very-dark-cyan);
+  font-size: 18px;
+  background-color: var(--strong-cyan);
 }
