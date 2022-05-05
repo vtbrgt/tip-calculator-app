@@ -1,5 +1,4 @@
 :root {
-  /* PALETA SUGERIDA */
   --strong-cyan: hsl(172, 67%, 45%);
   --very-dark-cyan: hsl(183, 100%, 15%);
   --dark-grayish-cyan: hsl(186, 14%, 43%);
@@ -21,7 +20,6 @@ header img {
 
 .calculadora {
   background-color: var(--branco);
-  height: 100vh;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
@@ -42,38 +40,55 @@ form {
 input[type="number"] {
   border: none;
   background-color: var(--very-light-grayish-cyan);
-  width: 100%;
+  width: 97%;
   height: 1.7rem;
   font-family: inherit;
   color: hsl(183, 100%, 15%);
   text-align: end;
   font-size: 22px;
   padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 input[type="number"]:focus {
-  border: 1px solid hsl(183, 100%, 15%);
+  outline: 3px solid var(--strong-cyan);
+  box-shadow: 0 0 0 0;
+}
+
+.valor_conta {
+  margin-bottom: 2%;
 }
 
 #bill {
   background-image: url(../images/icon-dollar.svg);
   background-repeat: no-repeat;
-  background-position: 4%;
+  background-position: 2%;
 }
 
 .quantidade_gorjeta {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  gap: 5px;
 }
 
 .quantidade_gorjeta input:not(:last-child) {
-  display: none;
+  position: absolute;
+  z-index: -1;
 }
 
 .quantidade_gorjeta input:last-child {
-  width: 40%;
+  width: 43%;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .quantidade_gorjeta label {
@@ -81,23 +96,44 @@ input[type="number"]:focus {
   text-align: center;
   vertical-align: middle;
   width: 45%;
-  height: 2rem;
-  margin: 10px 6px;
+  height: 2.2rem;
   background-color: var(--very-dark-cyan);
   font-size: 22px;
   border: 2px solid var(--very-dark-cyan);
   border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.quantidade_gorjeta label:hover,
+.quantidade_gorjeta label:active {
+  background-color: var(--strong-cyan);
+  border-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.quantidade_gorjeta input[type="radio"]:checked {
+  background-color: var(--strong-cyan);
+  border-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
 }
 
 .quantidade_gorjeta input[type="number"]::placeholder {
-  color: var(--very-dark-cyan);
+  color: var(--dark-grayish-cyan);
   text-align: center;
+}
+
+.quantidade_pessoas {
+  margin-top: 2%;
 }
 
 #number_people {
   background-image: url(../images/icon-person.svg);
   background-repeat: no-repeat;
-  background-position: 4%;
+  background-position: 2%;
 }
 
 .resultados {
@@ -117,14 +153,17 @@ input[type="number"]:focus {
 
 #p_person {
   color: var(--grayish-cyan);
-  display: inline-block;
 }
 
 .resultados span {
+  display: inline;
   align-self: flex-end;
+  font-size: 22px;
+  color: var(--strong-cyan);
 }
 
 .reset {
+  cursor: pointer;
   border: none;
   height: 2rem;
   margin-top: 15px;
@@ -134,4 +173,43 @@ input[type="number"]:focus {
   color: var(--very-dark-cyan);
   font-size: 18px;
   background-color: var(--strong-cyan);
+}
+
+@media (min-width: 1024px) {
+  header {
+    height: 6rem;
+  }
+
+  header img {
+    margin: 4.5rem auto;
+  }
+
+  .calculadora {
+    margin: 0 auto;
+    width: 50%;
+    height: 355px;
+    border-radius: 20px;
+  }
+
+  form {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  input[type="number"] {
+    width: 85%;
+  }
+
+  .quantidade_gorjeta {
+    width: 88%;
+  }
+
+  .resultados {
+    height: auto;
+    width: 60%;
+  }
+
+  .reset {
+    flex-grow: 1;
+  }
 }

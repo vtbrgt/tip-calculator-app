@@ -30,53 +30,58 @@
     <main>
       <div class="calculadora">
         <form action="">
-          <div class="valor_conta">
-            <label for="bill">Bill</label>
-            <input type="number" id="bill" />
-          </div>
-
-          <div>
-            <label>Select Tip %</label>
-            <div class="quantidade_gorjeta">
-              <input type="radio" id="5%" name="tip_amount" value="5%" />
-              <label for="5%">5%</label>
-
-              <input type="radio" id="10%" name="tip_amount" value="10%" />
-              <label for="10%">10%</label>
-
-              <input type="radio" id="15%" name="tip_amount" value="15%" />
-              <label for="15%">15%</label>
-
-              <input type="radio" id="25%" name="tip_amount" value="25%" />
-              <label for="25%">25%</label>
-
-              <input type="radio" id="50%" name="tip_amount" value="50%" />
-              <label for="50%">50%</label>
-
-              <input type="number" placeholder="Custom" />
+          <div class="seletores">
+            <div class="valor_conta">
+              <label for="bill">Bill</label>
+              <input type="number" id="bill" />
             </div>
-          </div>
 
-          <div class="quantidade_pessoas">
-            <label for="number_people">Number of People</label>
-            <input type="number" id="number_people" />
+            <div>
+              <label>Select Tip %</label>
+              <div class="quantidade_gorjeta">
+                <input type="radio" id="5%" name="tip_amount" value="5%" />
+                <label for="5%">5%</label>
+
+                <input type="radio" id="10%" name="tip_amount" value="10%" />
+                <label for="10%">10%</label>
+
+                <input type="radio" id="15%" name="tip_amount" value="15%" />
+                <label for="15%">15%</label>
+
+                <input type="radio" id="25%" name="tip_amount" value="25%" />
+                <label for="25%">25%</label>
+
+                <input type="radio" id="50%" name="tip_amount" value="50%" />
+                <label for="50%">50%</label>
+
+                <input
+                  type="number"
+                  id="gorjeta_customizada"
+                  placeholder="Custom"
+                />
+              </div>
+            </div>
+
+            <div class="quantidade_pessoas">
+              <label for="number_people">Number of People</label>
+              <input type="number" id="number_people" />
+            </div>
           </div>
 
           <div class="resultados">
-            <div class="">
-              <label>Tip Amount</label>
-              <label id="p_person">/ person</label>
-              <span>$</span>
-
-              <label>Total</label>
-              <label id="p_person">/ person</label>
-              <span>$</span>
-            </div>
+            <label>Tip Amount</label>
+            <label id="p_person">/ person</label>
+            <span>$</span>
+            <label>Total</label>
+            <label id="p_person">/ person</label>
+            <span>$</span>
 
             <input type="reset" value="RESET" class="reset" />
           </div>
         </form>
       </div>
     </main>
+
+    <script src="main.js"></script>
   </body>
 </html>
