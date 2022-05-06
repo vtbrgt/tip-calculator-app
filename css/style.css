@@ -80,10 +80,14 @@ input[type="number"]:focus {
   gap: 5px;
 }
 
-.quantidade_gorjeta input:not(:last-child) {
+input[type="radio"] {
+  display: none;
+}
+
+/* .quantidade_gorjeta label input:not(:last-child) {
   position: absolute;
   z-index: -1;
-}
+} */
 
 .quantidade_gorjeta input:last-child {
   width: 43%;
