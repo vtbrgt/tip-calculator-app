@@ -80,22 +80,14 @@ input[type="number"]:focus {
   gap: 5px;
 }
 
-input[type="radio"] {
-  display: none;
-}
-
-/* .quantidade_gorjeta label input:not(:last-child) {
-  position: absolute;
-  z-index: -1;
-} */
-
-.quantidade_gorjeta input:last-child {
+#gorjeta_customizada {
   width: 43%;
   border-radius: 4px;
   cursor: pointer;
 }
 
-.quantidade_gorjeta label {
+.seletores button {
+  appearance: none;
   color: var(--very-light-grayish-cyan);
   text-align: center;
   vertical-align: middle;
@@ -103,6 +95,7 @@ input[type="radio"] {
   height: 2.2rem;
   background-color: var(--very-dark-cyan);
   font-size: 22px;
+  font-family: inherit;
   border: 2px solid var(--very-dark-cyan);
   border-radius: 4px;
   display: flex;
@@ -112,17 +105,14 @@ input[type="radio"] {
   transition: background 0.2s ease;
 }
 
-.quantidade_gorjeta label:hover,
-.quantidade_gorjeta label:active {
+.seletores button:hover {
   background-color: var(--strong-cyan);
   border-color: var(--strong-cyan);
-  color: var(--very-dark-cyan);
 }
 
-.quantidade_gorjeta input[type="radio"]:checked {
-  background-color: var(--strong-cyan);
-  border-color: var(--strong-cyan);
-  color: var(--very-dark-cyan);
+.seletores button:active {
+  background-color: var(--light-grayish-cyan);
+  border-color: var(--light-grayish-cyan);
 }
 
 .quantidade_gorjeta input[type="number"]::placeholder {
@@ -211,9 +201,10 @@ input[type="radio"] {
   .resultados {
     height: auto;
     width: 60%;
+    justify-content: space-between;
   }
 
   .reset {
-    flex-grow: 1;
+    flex-shrink: 1;
   }
 }
