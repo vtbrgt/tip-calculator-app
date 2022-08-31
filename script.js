@@ -1,33 +1,78 @@
-let valorConta = document.querySelector("#bill");
+const conta = document.querySelector('#bill');
+const button = document.querySelectorAll('.botao');
+const gorjetaCustomizada = document.querySelector('#gorjeta_customizada');
+const numeroPessoas = document.querySelector('#number_people');
+const resultados = document.querySelectorAll('.resultado');
 
-/* parseFloat() */
+let contaValor = 0.0; // valor padrão
+let quantidadeGorjeta = 0.15;
+let pessoas = 1;
+let valorGorjeta = 0;
+let total = 0;
 
-const button = document.querySelectorAll("botao");
+/* VALOR CONTA */
+function setarValorConta() {
+  contaValor = parseFloat(conta.value);
 
-/*
-let gorjetaCustomizada = document.querySelector("#gorjeta_customizada").value;
-let numeroPessoas = document.querySelector("#number_people").value;
-
-let gorjetaPorPessoa = (valorConta * quantidadeGorjeta) / 100 / numeroPessoas;
-
-let totalPorPessoa = valorConta / numeroPessoas + gorjetaPorPessoa;
-
-function mostraValor(span) {
-  span.textContent = gorjetaPorPessoa;
+  calculaGorjeta();
 }
- */
 
-button.forEach((botao) => {
-  botao.addEventListener("click", selecionarGorjeta);
-});
+conta.addEventListener('change', setarValorConta);
 
-function selecionarGorjeta(evento) {
+/* GORJETA */
+function selecionarGorjeta(event) {
+  event.preventDefault();
   button.forEach((botao) => {
-    botao.classList.remove("active");
-    if (evento.target.innerHTML === botao.innerHTML) {
-      botao.classList.add("active");
+    botao.classList.remove('active');
+    if (event.target.innerHTML === botao.innerHTML) {
+      botao.classList.add('active');
       quantidadeGorjeta = parseFloat(botao.innerHTML) / 100;
       console.log(quantidadeGorjeta);
     }
   });
+
+  gorjetaCustomizada.value = '';
+
+  calculaGorjeta();
 }
+
+button.forEach((botao) => {
+  botao.addEventListener('click', selecionarGorjeta);
+});
+
+function valorGorjetaCustomizada() {
+  quantidadeGorjeta = parseFloat(gorjetaCustomizada.value / 100);
+
+  button.forEach((botao) => {
+    botao.classList.remove('active');
+  });
+
+  calculaGorjeta();
+}
+
+gorjetaCustomizada.addEventListener('input', valorGorjetaCustomizada());
+
+/* PESSOAS */
+function numeroDePessoas() {
+  pessoas = numeroPessoas.value;
+
+  calculaGorjeta();
+}
+
+numeroPessoas.addEventListener('input', numeroDePessoas());
+
+/* CALCULO GORJETA */
+function calculaGorjeta() {
+  if (pessoas >= 1) {
+    let valorGorjeta = (contaValor * quantidadeGorjeta) / pessoas;
+    let total = (contaValor * (quantidadeGorjeta + 1)) / pessoas;
+    resultados[0].innerHTML = '$' + valorGorjeta.toFixed(2);
+    resultados[1].innerHTML = '$' + total.toFixed(2);
+  }
+}
+
+// calcular ao input
+// gorjeta customizada
+// array?
+
+//evento 'keyup'

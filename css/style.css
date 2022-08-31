@@ -9,7 +9,7 @@
 }
 
 body {
-  font-family: "Space Mono", monospace;
+  font-family: 'Space Mono', monospace;
   background-color: var(--light-grayish-cyan);
 }
 
@@ -37,7 +37,7 @@ form {
   padding: 1.5rem;
 }
 
-input[type="number"] {
+input[type='number'] {
   border: none;
   background-color: var(--very-light-grayish-cyan);
   width: 97%;
@@ -52,13 +52,13 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-input[type="number"]:focus {
+input[type='number']:focus {
   outline: 3px solid var(--strong-cyan);
   box-shadow: 0 0 0 0;
 }
@@ -110,12 +110,12 @@ input[type="number"]:focus {
   border-color: var(--strong-cyan);
 }
 
-.seletores button:active {
+.seletores button.active {
   background-color: var(--light-grayish-cyan);
   border-color: var(--light-grayish-cyan);
 }
 
-.quantidade_gorjeta input[type="number"]::placeholder {
+.quantidade_gorjeta input[type='number']::placeholder {
   color: var(--dark-grayish-cyan);
   text-align: center;
 }
@@ -190,7 +190,7 @@ input[type="number"]:focus {
     gap: 0;
   }
 
-  input[type="number"] {
+  input[type='number'] {
     width: 85%;
   }
 
