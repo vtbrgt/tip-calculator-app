@@ -128,6 +128,15 @@ input[type='number']:focus {
   background-image: url(../images/icon-person.svg);
   background-repeat: no-repeat;
   background-position: 2%;
+  margin-bottom: 2%;
+}
+
+.erro {
+  display: none;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: tomato;
 }
 
 .resultados {
@@ -196,6 +205,11 @@ input[type='number']:focus {
 
   .quantidade_gorjeta {
     width: 88%;
+  }
+
+  .erro {
+    width: 90%;
+    text-align: start;
   }
 
   .resultados {
